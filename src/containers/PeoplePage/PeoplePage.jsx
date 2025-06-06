@@ -9,7 +9,6 @@ const PeoplePage = () => {
     //Локальный стате для хранения состояния
     const [people, setPeople] = useState(null);
 
-
     const getResource = async (url) => {
         //Вызываем функцию запроса на сервер
         const res = await getApiResource(url);
