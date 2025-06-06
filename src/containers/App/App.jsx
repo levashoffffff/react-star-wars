@@ -1,9 +1,14 @@
-import cn from 'classnames';
+/* import cn from 'classnames'; */
+import PeoplePage from '../PeoplePage';
 import styles from './App.module.css';
+
+/* import {getApiResource} from '../../utils/network'; */
+
+/* getApiResource(); */
 
 const App = () => {
   return (
-    <h1 className={cn(styles.header, styles.text)}>Hello</h1>
+    <PeoplePage />
   )
 }
 
