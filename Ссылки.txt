@@ -1,0 +1,1 @@
+https://akabab.github.io/starwars-api/#alljson - api для получения картинок персонажей

@@ -1,4 +1,16 @@
-const SWAPI_ROOT = 'https://swapi.info/api/';
-const SWAPI_PEOPLE = 'people';
+//common
+export const HTTPS = 'https://';
+export const HTTP = 'http://';
 
-export const API_PEOPLE = SWAPI_ROOT + SWAPI_PEOPLE;
+//swapi
+export const SWAPI_ROOT = 'swapi.info/api/';
+export const SWAPI_PEOPLE = 'people';
+
+export const API_PEOPLE = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE;
+
+// visualguide
+const GUIDE_ROOT_IMG = "https://akabab.github.io/starwars-api/api/";
+const GUIDE_PEOPLE = "all";
+export const GUIDE_IMG_EXTENSION = ".json";
+
+export const URL_IMG_PERSON = HTTPS + GUIDE_ROOT_IMG + GUIDE_PEOPLE + GUIDE_IMG_EXTENSION;

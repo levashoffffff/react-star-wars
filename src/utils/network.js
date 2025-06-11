@@ -1,5 +1,5 @@
-const SWAPI_ROOT = 'https://swapi.info/api/';
-const SWAPI_PEOPLE = 'people';
+/* const SWAPI_ROOT = 'https://swapi.info/api/';
+const SWAPI_PEOPLE = 'people'; */
 
 //fetch запрос
 
@@ -10,7 +10,7 @@ const SWAPI_PEOPLE = 'people';
         .catch(error => console.log(error.message))  
 } */
 
-//Переписали на асинхронную функцию
+//Запрос на сервер №1 за персонажами. Переписали на асинхронную функцию
 export const getApiResource = async (url) => {
     //Для перехвата ошибки
     try {
@@ -31,7 +31,29 @@ export const getApiResource = async (url) => {
         console.error('Could not fetch.', error.message);
         return false;
     }
+}
 
+//Запрос на сервер №2 за картинками к этим персонажам
+export const getImg = async (url) => {
+    //Для перехвата ошибки
+    try {
+        //Запрашиваем данные через fetch
+        const res = await fetch(url);
+        //Если res = false. Проверка на ошибку 404
+        if (!res.ok) {
+            //Выводим в консоль данные
+            console.error('Could not fetch.', res.status);
+            //Возвращаем false
+            return false;
+        }
+        //Если будут ошибки, то к этому блоку не дойдем
+        const body = await res.json();
+        return body;
+        //Если другие ошибки, то срабатывает блок catch
+    } catch (error) {
+        console.error('Could not fetch.', error.message);
+        return false;
+    }
 }
 
 //Функция возвращает данные в виде промиса или false
