@@ -9,7 +9,7 @@ export const SWAPI_PEOPLE = 'people';
 export const API_PEOPLE = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE;
 
 // visualguide
-const GUIDE_ROOT_IMG = "https://akabab.github.io/starwars-api/api/";
+const GUIDE_ROOT_IMG = "akabab.github.io/starwars-api/api/";
 const GUIDE_PEOPLE = "all";
 export const GUIDE_IMG_EXTENSION = ".json";
 
