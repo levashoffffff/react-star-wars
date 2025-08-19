@@ -26,6 +26,7 @@
   --theme-default-header: #cccc46;
 
   --width-max: 1200px;
+  --width-min: 400px;
 }
 
 body {
