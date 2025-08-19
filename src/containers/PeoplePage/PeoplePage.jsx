@@ -1,41 +1,20 @@
 //Для хранения состояния и выполнения запроса
 import { useState, useEffect } from 'react';
-import { getApiResource, getImg } from '../../utils/network';
+import { getApiResource, getImg } from '@utils/network';
 //Подключили константу в которой содержится путь
-import { API_PEOPLE, URL_IMG_PERSON } from '../../constants/api';
+import { API_PEOPLE, URL_IMG_PERSON } from '@constants/api';
 //Подулючили функциб получения id из URL
-import { getPeopleId } from '../../services/getPeopleData';
+import { getPeopleId } from '@services/getPeopleData';
 //Подгрузили компоненту PeopleList
-import PeopleList from '../../components/PeoplePage/PeopleList';
+import PeopleList from '@components/PeoplePage/PeopleList';
 //HOC для обработки ошибок с сервера
-import { withErrorApi } from '../../hoc-helper/withErrorApi';
+import { withErrorApi } from '@hoc-helper/withErrorApi';
 
-import styles from './PeoplePage.module.css';
+/* import styles from './PeoplePage.module.css'; */
 
 const PeoplePage = ({ setErrorApi }) => {
     //Локальный стате для хранения персонажей
     const [people, setPeople] = useState(null);
-
-
-    /*     const getResource = async (url) => {
-            
-            const res = await getApiResource(url);
-    
-            const peopleList = res.map(({ name, url }) => {
-    
-                const id = getPeopleId(url);
-                const img = getPeopleImage(id);
-                console.log(id);
-                return {
-                    id: id,
-                    name: name,
-                    img: img
-                }
-            })
-    
-            setPeople(peopleList);
-    
-        } */
 
     const getResource = async (url1, url2) => {
         //Вызываем функцию запроса на сервер №1 за получением всех персонажей
