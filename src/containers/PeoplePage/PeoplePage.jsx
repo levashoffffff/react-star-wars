@@ -9,8 +9,9 @@ import { getPeopleId } from '@services/getPeopleData';
 import PeopleList from '@components/PeoplePage/PeopleList';
 //HOC для обработки ошибок с сервера
 import { withErrorApi } from '@hoc-helper/withErrorApi';
+//Подключаем библиотеку типов
+import PropTypes from 'prop-types';
 
-/* import styles from './PeoplePage.module.css'; */
 
 const PeoplePage = ({ setErrorApi }) => {
     //Локальный стате для хранения персонажей
@@ -78,6 +79,10 @@ const PeoplePage = ({ setErrorApi }) => {
             {people && <PeopleList people={people} />}
         </>
     )
+}
+
+PeoplePage.propTypes = {
+    setErrorApi: PropTypes.func
 }
 
 export default withErrorApi(PeoplePage);
