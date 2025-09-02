@@ -5,6 +5,8 @@ export const HTTP = 'http://';
 //swapi
 export const SWAPI_ROOT = 'swapi.info/api/';
 export const SWAPI_PEOPLE = 'people';
+//Константа для хранения знначений query параметров
+export const SWAPI_PARAM_PAGES = '/?page=';
 
 export const API_PEOPLE = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE;
 
