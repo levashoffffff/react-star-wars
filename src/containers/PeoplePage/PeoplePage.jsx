@@ -22,7 +22,6 @@ const PeoplePage = ({ setErrorApi }) => {
     const [people, setPeople] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
-    debugger;
 
     const query = useQueryParams();
     const queryPage = query.get('page');
