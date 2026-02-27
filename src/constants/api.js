@@ -9,6 +9,7 @@ export const SWAPI_PEOPLE = 'people';
 export const SWAPI_PARAM_PAGES = '/?page=';
 
 export const API_PEOPLE = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE;
+export const API_PERSON = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE;
 
 // visualguide
 const GUIDE_ROOT_IMG = "akabab.github.io/starwars-api/api/";

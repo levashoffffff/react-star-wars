@@ -15,6 +15,8 @@ import PropTypes from 'prop-types';
 import { useQueryParams } from '@hooks/useQueryParams';
 import { useNavigate } from 'react-router-dom'; // Измененный импорт
 import styles from './PeoplePage.module.css';
+//Storybook
+import UiButton from '@ui/UiButton';
 
 const PeoplePage = ({ setErrorApi }) => {
     const navigate = useNavigate();
@@ -107,12 +109,14 @@ const PeoplePage = ({ setErrorApi }) => {
                 <>
                     <PeopleList people={getCurrentPeople()} />
                     <div className={styles.pagination}>
-                        <button 
+                        {/* <button 
                             disabled={currentPage === 1}
                             onClick={() => handlePageChange(currentPage - 1)}
                         >
                             Previous
-                        </button>
+                        </button> */}
+
+                        <UiButton text="Previous" handlePageChange={handlePageChange} currentPage={currentPage} />
                         
                         {Array.from({ length: totalPages }, (_, i) => i + 1)
                             .map(page => (
@@ -126,12 +130,14 @@ const PeoplePage = ({ setErrorApi }) => {
                             ))
                         }
                         
-                        <button 
+                        {/* <button 
                             disabled={currentPage === totalPages}
                             onClick={() => handlePageChange(currentPage + 1)}
                         >
                             Next
-                        </button>
+                        </button> */}
+
+                        <UiButton text="Next" handlePageChange={handlePageChange} currentPage={currentPage} totalPages={totalPages} />
                     </div>
                 </>
             )}

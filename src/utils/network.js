@@ -1,3 +1,4 @@
+import { HTTP, HTTPS } from "@constants/api";
 /* const SWAPI_ROOT = 'https://swapi.info/api/';
 const SWAPI_PEOPLE = 'people'; */
 
@@ -54,6 +55,19 @@ export const getImg = async (url) => {
         console.error('Could not fetch.', error.message);
         return false;
     }
+}
+
+export const changeHTTP = url => {
+    const result = url ? url.replace(HTTP, HTTPS) : url;
+    return result;
+}
+
+export const makeConcurrentRequest = async(url) => {
+    const res = await Promise.all(url.map(res => {
+        return fetch(res).then(res => res.json())
+    }));
+
+    return res;
 }
 
 //Функция возвращает данные в виде промиса или false
