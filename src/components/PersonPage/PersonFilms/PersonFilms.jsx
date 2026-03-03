@@ -19,9 +19,9 @@ const PersonFilms = ({ personFilms }) => {
                     .sort((a, z) => a.episode_id - z.episode_id)
                     .map(({ title, episode_id }) =>
                         <li className={styles.list__item} key={episode_id}>
-                            <span>Episode {episode_id}</span>
-                            <span> : </span>
-                            <span>{title}</span>
+                            <span className={styles.item__episode}>Episode {episode_id}</span>
+                            <span className={styles.item__colon}> : </span>
+                            <span className={styles.item__title}>{title}</span>
                         </li>
                     )}
             </ul>
